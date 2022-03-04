@@ -20,7 +20,8 @@
     },
     "autoload": {
         "files": [
-            "src/array_functions.php"
+            "src/array_functions.php",
+            "src/utility_functions.php"
         ]
     },
     "autoload-dev": {
