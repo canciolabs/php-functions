@@ -24,7 +24,6 @@
   * `volume`
 * Implement math functions:
   * `factorial`
-  * `greatest_common_divisor (GDC)`
   * `lowest_common_denominator (LCD)` 
   * `unitary_divisor`
 * Improve functions:
