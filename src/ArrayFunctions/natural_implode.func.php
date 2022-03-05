@@ -1,6 +1,6 @@
 <?php
 
-namespace CancioLabs\Functions;
+namespace CancioLabs\Functions\ArrayFunctions;
 
 use Webmozart\Assert\Assert;
 

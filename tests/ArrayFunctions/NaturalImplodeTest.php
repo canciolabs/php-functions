@@ -4,7 +4,7 @@ namespace CancioLabs\Functions\Tests\ArrayFunctions;
 
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use function CancioLabs\Functions\natural_implode;
+use function CancioLabs\Functions\ArrayFunctions\natural_implode;
 
 class NaturalImplodeTest extends TestCase
 {
