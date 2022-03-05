@@ -13,6 +13,7 @@ Functions that do not deserve a class or component. Not yet. :)
   * rgb_to_hex
 * Math
   * is_prime
+  * gcd (alias for `greatest_common_divisor`)
 * String
   * remove_extra_spaces
   * replace_special_chars
