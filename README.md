@@ -4,6 +4,7 @@ Functions that do not deserve a class or component. Not yet. :)
 ## Functions
 * Array
   * array_most_frequent_element
+  * array_subsets
   * natural_implode
 * Color
   * hex_to_rgb
