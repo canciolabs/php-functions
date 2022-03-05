@@ -3,7 +3,7 @@
 namespace CancioLabs\Functions\Tests\StringFunctions;
 
 use CancioLabs\Functions\Tests\CustomTestCase;
-use function CancioLabs\Functions\UtilityFunctions\remove_extra_spaces;
+use function CancioLabs\Functions\StringFunctions\remove_extra_spaces;
 
 class RemoveExtraSpacesTest extends CustomTestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace CancioLabs\Functions\UtilityFunctions;
+namespace CancioLabs\Functions\StringFunctions;
 
 if (!function_exists('replace_special_chars')) {
     function replace_special_chars(string $str): string

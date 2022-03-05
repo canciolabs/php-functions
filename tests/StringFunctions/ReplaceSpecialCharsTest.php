@@ -3,7 +3,7 @@
 namespace CancioLabs\Functions\Tests\StringFunctions;
 
 use CancioLabs\Functions\Tests\CustomTestCase;
-use function CancioLabs\Functions\UtilityFunctions\replace_special_chars;
+use function CancioLabs\Functions\StringFunctions\replace_special_chars;
 
 class ReplaceSpecialCharsTest extends CustomTestCase
 {
