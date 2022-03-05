@@ -10,8 +10,7 @@
   * `array_structure`
   * `array_subsets`
 * Implement color functions:
-  * `is_hex_color`
-  * `hex_to_rgb`
+  * `is_rgb_color`
   * `rgb_to_hex`
 * Implement converter functions:
   * `angle`
