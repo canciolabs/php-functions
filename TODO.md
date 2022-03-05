@@ -7,7 +7,6 @@
   * `natural_explode`
   * `array_diff_recursive`
   * `array_structure`
-  * `array_subsets`
 * Implement converter functions:
   * `angle`
   * `area`
