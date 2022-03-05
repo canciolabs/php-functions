@@ -3,7 +3,7 @@
 namespace CancioLabs\Functions\Tests\UtilityFunctions;
 
 use PHPUnit\Framework\TestCase;
-use function CancioLabs\Functions\swap;
+use function CancioLabs\Functions\UtilityFunctions\swap;
 
 class SwapTest extends TestCase
 {

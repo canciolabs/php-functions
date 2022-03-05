@@ -1,6 +1,6 @@
 <?php
 
-namespace CancioLabs\Functions;
+namespace CancioLabs\Functions\UtilityFunctions;
 
 if (!function_exists('swap')) {
     function swap(&$a, &$b): void
