@@ -9,7 +9,7 @@ use function CancioLabs\Functions\ColorFunctions\hex_to_rgb;
 class HexToRgbTest extends CustomTestCase
 {
 
-    public function validColorHexDataProvider(): array
+    public function validHexColorDataProvider(): array
     {
         return [
             ['#0f462c', '15,70,44'],
@@ -30,7 +30,7 @@ class HexToRgbTest extends CustomTestCase
         ];
     }
 
-    public function invalidColorHexDataProvider(): array
+    public function invalidHexColorDataProvider(): array
     {
         return [
             [''],
@@ -47,7 +47,7 @@ class HexToRgbTest extends CustomTestCase
 
     /**
      * @test
-     * @dataProvider validColorHexDataProvider
+     * @dataProvider validHexColorDataProvider
      */
     public function shouldReturnRgbWhenHexColorIsValid(string $hex_color, string $rgb_color): void
     {
@@ -56,7 +56,7 @@ class HexToRgbTest extends CustomTestCase
 
     /**
      * @test
-     * @dataProvider invalidColorHexDataProvider
+     * @dataProvider invalidHexColorDataProvider
      */
     public function shouldThrowExceptionWhenHexColorIsInvalid(string $invalid_hex_color): void
     {
