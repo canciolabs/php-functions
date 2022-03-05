@@ -12,8 +12,9 @@ Functions that do not deserve a class or component. Not yet. :)
   * is_rgb_color
   * rgb_to_hex
 * Math
-  * is_prime
+  * lcd (alias for `lowest_common_denominator`)
   * gcd (alias for `greatest_common_divisor`)
+  * is_prime
 * String
   * remove_extra_spaces
   * replace_special_chars
