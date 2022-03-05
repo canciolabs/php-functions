@@ -2,11 +2,11 @@
 
 namespace CancioLabs\Functions\Tests\ArrayFunctions;
 
+use CancioLabs\Functions\Tests\CustomTestCase;
 use InvalidArgumentException;
-use PHPUnit\Framework\TestCase;
 use function CancioLabs\Functions\ArrayFunctions\natural_implode;
 
-class NaturalImplodeTest extends TestCase
+class NaturalImplodeTest extends CustomTestCase
 {
 
     /**
