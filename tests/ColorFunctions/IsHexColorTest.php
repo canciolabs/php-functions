@@ -8,7 +8,7 @@ use function CancioLabs\Functions\ColorFunctions\is_hex_color;
 class IsHexColorTest extends CustomTestCase
 {
 
-    public function validColorHexDataProvider(): array
+    public function validHexColorDataProvider(): array
     {
         $faker = self::faker();
 
@@ -21,7 +21,7 @@ class IsHexColorTest extends CustomTestCase
         return $hex_colors;
     }
 
-    public function invalidColorHexDataProvider(): array
+    public function invalidHexColorDataProvider(): array
     {
         return [
             [''],
@@ -38,7 +38,7 @@ class IsHexColorTest extends CustomTestCase
 
     /**
      * @test
-     * @dataProvider validColorHexDataProvider
+     * @dataProvider validHexColorDataProvider
      */
     public function shouldReturnTrueForHexColors(string $hex_color): void
     {
@@ -47,7 +47,7 @@ class IsHexColorTest extends CustomTestCase
 
     /**
      * @test
-     * @dataProvider invalidColorHexDataProvider
+     * @dataProvider invalidHexColorDataProvider
      */
     public function shouldReturnFalseForOtherStrings(string $invalid_hex_color): void
     {
