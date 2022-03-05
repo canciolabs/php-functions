@@ -9,61 +9,81 @@ use function CancioLabs\Functions\ArrayFunctions\natural_implode;
 class NaturalImplodeTest extends CustomTestCase
 {
 
-    /**
-     * @test
-     */
-    public function shouldReturnEmptyStringWhenArrayIsEmpty(): void
+    public function invalidArrayDataProvider(): array
     {
-        natural_implode([]);
-        $this->expectException(InvalidArgumentException::class);
+        $inputs = [];
 
-        natural_implode([null]);
-        $this->expectException(InvalidArgumentException::class);
+        $inputs[] = [[null]];
+        $inputs[] = [[1]];
 
-        natural_implode(['']);
-        $this->expectException(InvalidArgumentException::class);
+        return $inputs;
+    }
 
-        natural_implode([1]);
-        $this->expectException(InvalidArgumentException::class);
+    public function validArrayDataProvider(): array
+    {
+        $inputs = [];
+
+        $inputs[] = [[], ''];
+        $inputs[] = [[''], ''];
+        $inputs[] = [['1'], '1'];
+        $inputs[] = [['foo'], 'foo'];
+        $inputs[] = [[1 => 'bar'], 'bar'];
+        $inputs[] = [['foo' => 'zoo'], 'zoo'];
+        $inputs[] = [['foo', 'bar'], 'foo and bar'];
+        $inputs[] = [[1 => 'foo', 2 => 'bar', 3 => 'zoo'], 'foo, bar and zoo'];
+        $inputs[] = [['foo' => '1', 'bar' => '2', 'zoo' => '3'], '1, 2 and 3'];
+
+        return $inputs;
+    }
+
+    public function validSeparatorAndConjuntionDataProvider(): array
+    {
+        $inputs = [];
+
+        $inputs[] = [
+            ['apple', 'banana', 'cashew'],
+            ', ',
+            ' or ',
+            'apple, banana or cashew'
+        ];
+
+        $inputs[] = [
+            ['Rio', 'New York', 'Jerusalem', 'Sydney'],
+            '... ',
+            '... and ',
+            'Rio... New York... Jerusalem... and Sydney'
+        ];
+
+        return $inputs;
     }
 
     /**
      * @test
+     * @dataProvider invalidArrayDataProvider
      */
-    public function shouldReturnElementValueWhenArrayHasOneElement(): void
+    public function shouldThrowExceptionWhenInputIsInvalid(array $arr): void
     {
-        $str = natural_implode(['1']);
-        $this->assertSame('1', $str);
+        $this->expectException(InvalidArgumentException::class);
 
-        $str = natural_implode(['foo']);
-        $this->assertSame('foo', $str);
-
-        $str = natural_implode([1 => 'bar']);
-        $this->assertSame('bar', $str);
-
-        $str = natural_implode(['foo' => 'zoo']);
-        $this->assertSame('zoo', $str);
+        natural_implode($arr);
     }
 
     /**
      * @test
+     * @dataProvider validArrayDataProvider
      */
-    public function shouldImplodeStringWhenArrayHasMultipleElements(): void
+    public function shouldReturnElementValueWhenArrayHasOneElement(array $arr, string $expected): void
     {
-        $str = natural_implode(['foo', 'bar']);
-        $this->assertSame('foo and bar', $str);
+        $this->assertEquals($expected, natural_implode($arr));
+    }
 
-        $str = natural_implode([1 => 'foo', 2 => 'bar', 3 => 'zoo']);
-        $this->assertSame('foo, bar and zoo', $str);
-
-        $str = natural_implode(['foo' => '1', 'bar' => '2', 'zoo' => '3']);
-        $this->assertSame('1, 2 and 3', $str);
-
-        $str = natural_implode(['apple', 'banana', 'cashew'], ', ', ' or ');
-        $this->assertSame('apple, banana or cashew', $str);
-
-        $str = natural_implode(['Rio', 'New York', 'Jerusalem', 'Sydney'], '... ', '... and ');
-        $this->assertSame('Rio... New York... Jerusalem... and Sydney', $str);
+    /**
+     * @test
+     * @dataProvider validSeparatorAndConjuntionDataProvider
+     */
+    public function shouldImplodeStringWhenArrayHasMultipleElements(array $arr, string $separator, string $conjunection, string $expected): void
+    {
+        $this->assertEquals($expected, natural_implode($arr, $separator, $conjunection));
     }
 
 }

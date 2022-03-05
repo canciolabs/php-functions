@@ -7,7 +7,7 @@ use Webmozart\Assert\Assert;
 if (!function_exists('natural_implode')) {
     function natural_implode(array $arr, string $separator = ', ', string $conjunction = ' and '): string
     {
-        Assert::allStringNotEmpty($arr);
+        Assert::allString($arr);
 
         $arr_size = count($arr);
 
