@@ -8,6 +8,55 @@ use function CancioLabs\Functions\MathFunctions\is_prime;
 class IsPrimeTest extends CustomTestCase
 {
 
+    public function negativeNumbersDataProvider(): array
+    {
+        $numbers = [];
+
+        $faker = self::faker();
+        for ($i = 1; $i <= 5; $i++) {
+            $numbers[] = [$faker->numberBetween(-10000, -1)];
+        }
+
+        return $numbers;
+    }
+
+    public function evenNumbersGreaterThanTwoDataProvider(): array
+    {
+        $numbers = [];
+
+        $faker = self::faker();
+        for ($i = 1, $nb_tests = 1; $nb_tests <= 5; $i++) {
+            $number = $faker->numberBetween(4, 10000);
+
+            if ($number % 2 === 0) {
+                $numbers[] = [$number];
+                $nb_tests++;
+            }
+        }
+
+        return $numbers;
+    }
+
+    public function nonPrimeOddNumbersDataProvider(): array
+    {
+        $numbers = [];
+
+        $numbers[] = [9];
+        $numbers[] = [15];
+        $numbers[] = [27];
+        $numbers[] = [105];
+        $numbers[] = [111];
+        $numbers[] = [115];
+        $numbers[] = [1007];
+        $numbers[] = [1023];
+        $numbers[] = [1027];
+        $numbers[] = [7881];
+        $numbers[] = [7905];
+        $numbers[] = [7909];
+
+        return $numbers;
+    }
+
     public function primeNumbersDataProvider(): array
     {
         return [
@@ -50,14 +99,11 @@ class IsPrimeTest extends CustomTestCase
 
     /**
      * @test
+     * @dataProvider negativeNumbersDataProvider
      */
-    public function shouldReturnFalseForNegativeNumbers(): void
+    public function shouldReturnFalseForNegativeNumbers(int $number): void
     {
-        $faker = self::faker();
-
-        for ($i = 1; $i <= 5; $i++) {
-            $this->assertFalse(is_prime($faker->numberBetween(-10000, -1)));
-        }
+        $this->assertFalse(is_prime($number));
     }
 
     /**
@@ -78,31 +124,20 @@ class IsPrimeTest extends CustomTestCase
 
     /**
      * @test
+     * @dataProvider evenNumbersGreaterThanTwoDataProvider
      */
-    public function shouldReturnFalseForEvenNumbersGreaterThanTwo(): void
+    public function shouldReturnFalseForEvenNumbersGreaterThanTwo(int $number): void
     {
-        $faker = self::faker();
-
-        for ($i = 1, $nb_tests = 1; $nb_tests <= 5; $i++) {
-            $number = $faker->numberBetween(4, 10000);
-
-            if ($number % 2 === 0) {
-                $this->assertFalse(is_prime($number));
-                $nb_tests++;
-            }
-        }
+        $this->assertFalse(is_prime($number));
     }
 
     /**
      * @test
+     * @dataProvider nonPrimeOddNumbersDataProvider
      */
-    public function shouldReturnFalseForOddAndNonPrimeNumbers(): void
+    public function shouldReturnFalseForOddAndNonPrimeNumbers(int $number): void
     {
-        // Some odd numbers
-        $odd_numbers = [9, 15, 27, 105, 111, 115, 1007, 1023, 1027, 7881, 7905, 7909];
-        foreach ($odd_numbers as $odd_number) {
-            $this->assertFalse(is_prime($odd_number));
-        }
+        $this->assertFalse(is_prime($number));
     }
 
     /**
