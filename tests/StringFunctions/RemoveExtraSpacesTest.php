@@ -15,7 +15,7 @@ class RemoveExtraSpacesTest extends CustomTestCase
         // Empty
         $vars[] = ['', ''];
 
-        // One work
+        // One word
         $vars[] = ['banana', 'banana'];
 
         // Left
