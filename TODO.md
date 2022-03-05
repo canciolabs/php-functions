@@ -24,7 +24,6 @@
   * `volume`
 * Implement math functions:
   * `factorial`
-  * `lowest_common_denominator (LCD)` 
   * `unitary_divisor`
 * Improve functions:
   * `is_prime` to handle larger integers
