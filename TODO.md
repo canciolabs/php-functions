@@ -6,12 +6,8 @@
 * Implement array functions:
   * `natural_explode`
   * `array_diff_recursive`
-  * `array_most_frequent_element`
   * `array_structure`
   * `array_subsets`
-* Implement color functions:
-  * `is_rgb_color`
-  * `rgb_to_hex`
 * Implement converter functions:
   * `angle`
   * `area`
