@@ -2,10 +2,10 @@
 
 namespace CancioLabs\Functions\Tests\UtilityFunctions;
 
-use PHPUnit\Framework\TestCase;
+use CancioLabs\Functions\Tests\CustomTestCase;
 use function CancioLabs\Functions\UtilityFunctions\swap;
 
-class SwapTest extends TestCase
+class SwapTest extends CustomTestCase
 {
 
     /**
