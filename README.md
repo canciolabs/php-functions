@@ -8,6 +8,7 @@ Functions that do not deserve a class or component. Not yet. :)
 * Color
   * hex_to_rgb
   * is_hex_color
+  * is_rgb_color
 * Math
   * is_prime
 * String
