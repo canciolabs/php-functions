@@ -8,9 +8,10 @@ Functions that do not deserve a class or component. Not yet. :)
   * natural_implode
 * Color
   * hex_to_rgb
+  * html_color_name_to_hex
   * is_basic_color_name
-  * is_html_color_name
   * is_hex_color
+  * is_html_color_name
   * is_rgb_color
   * rgb_to_hex
 * Converter
