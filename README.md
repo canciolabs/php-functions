@@ -8,6 +8,7 @@ Functions that do not deserve a class or component. Not yet. :)
   * natural_implode
 * Color
   * hex_to_rgb
+  * is_basic_color_name
   * is_hex_color
   * is_rgb_color
   * rgb_to_hex
