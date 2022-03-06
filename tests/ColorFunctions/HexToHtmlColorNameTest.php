@@ -14,7 +14,7 @@ class HexToHtmlColorNameTest extends CustomTestCase
         return [
             ['#f0f8ff', 'aliceblue'],
             ['#faebd7', 'antiquewhite'],
-            ['#00ffff', 'aqua'],
+            ['#00ffff', 'cyan'],
             ['#7fffd4', 'aquamarine'],
             ['#f0ffff', 'azure'],
             ['#f5f5dc', 'beige'],
