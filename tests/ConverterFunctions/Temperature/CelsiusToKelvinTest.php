@@ -61,7 +61,7 @@ class CelsiusToKelvinTest extends CustomTestCase
      * @test
      * @dataProvider temperatureDataProvider
      */
-    public function shouldReturnExpectedGcd($celsius, $kelvin): void
+    public function shouldReturnExpectedKelvin($celsius, $kelvin): void
     {
         $this->assertSame($kelvin, celsius_to_kelvin($celsius));
     }
