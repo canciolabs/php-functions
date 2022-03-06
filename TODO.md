@@ -19,7 +19,6 @@
   * `power`
   * `pressure`
   * `speed`
-  * `temperature`
   * `time`
   * `volume`
 * Implement math functions:
