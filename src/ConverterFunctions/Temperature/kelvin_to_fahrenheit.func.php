@@ -9,6 +9,9 @@ if (!function_exists('kelvin_to_fahrenheit')) {
     {
         Assert::numeric($kelvin);
 
+        $kelvin = (float) $kelvin;
+        Assert::greaterThanEq($kelvin, 0.0);
+
         return max(-459.67, ($kelvin * 9 / 5) - 459.67);
     }
 }

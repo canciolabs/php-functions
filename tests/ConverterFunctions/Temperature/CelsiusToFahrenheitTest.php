@@ -8,13 +8,11 @@ use function CancioLabs\Functions\ConverterFunctions\Temperature\celsius_to_fahr
 class CelsiusToFahrenheitTest extends TemperatureTestCase
 {
 
-    public function temperatureDataProvider(): array
+    public function validTemperatureDataProvider(): array
     {
         $numbers = [];
 
         // Min
-        $numbers[] = [-273.16, -459.67];
-        $numbers[] = [-273.151, -459.67];
         $numbers[] = [-273.15, -459.67];
 
         // Int
@@ -31,7 +29,7 @@ class CelsiusToFahrenheitTest extends TemperatureTestCase
 
     /**
      * @test
-     * @dataProvider invalidTemperatureDataProvider
+     * @dataProvider invalidTemperatureDataTypeDataProvider
      */
     public function shouldThrowExceptionWhenTemperatureIsNotNumeric($invalid_temperature): void
     {
@@ -42,9 +40,20 @@ class CelsiusToFahrenheitTest extends TemperatureTestCase
 
     /**
      * @test
-     * @dataProvider temperatureDataProvider
+     * @dataProvider invalidCelsiusDataProvider
      */
-    public function shouldReturnExpectedFahrenheit($celsius, $fahrenheit): void
+    public function shouldThrowExceptionWhenTemperatureIsInvalid($invalid_temperature): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        celsius_to_fahrenheit($invalid_temperature);
+    }
+
+    /**
+     * @test
+     * @dataProvider validTemperatureDataProvider
+     */
+    public function shouldConvertWhenTemperatureIsValid($celsius, $fahrenheit): void
     {
         $this->assertSame($fahrenheit, celsius_to_fahrenheit($celsius));
     }

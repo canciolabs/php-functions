@@ -9,6 +9,9 @@ if (!function_exists('fahrenheit_to_kelvin')) {
     {
         Assert::numeric($fahrenheit);
 
+        $fahrenheit = (float) $fahrenheit;
+        Assert::greaterThanEq($fahrenheit, -459.67);
+
         return max(0, ($fahrenheit + 459.67) * (5 / 9));
     }
 }
