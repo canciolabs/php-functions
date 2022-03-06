@@ -12,6 +12,7 @@ Functions that do not deserve a class or component. Not yet. :)
   * hex_to_rgb
   * html_color_name_to_rgb
   * html_color_name_to_hex
+  * html_color_names
   * is_basic_html_color_name
   * is_hex_color
   * is_html_color_name
