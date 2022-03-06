@@ -179,7 +179,7 @@ class HtmlColorNameToHexTest extends CustomTestCase
      * @test
      * @dataProvider validHtmlColorNameDataProvider
      */
-    public function shouldReturnRgbWhenHexColorIsValid(string $color_name, string $hex_color): void
+    public function shouldReturnHexWhenHtmlColorNameIsValid(string $color_name, string $hex_color): void
     {
         $this->assertSame($hex_color, html_color_name_to_hex($color_name));
     }
