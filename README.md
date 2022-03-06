@@ -1,5 +1,9 @@
-# CancioLabs / Functions
+# CancioLabs / PHP Functions
 Functions that do not deserve a class or component. Not yet. :)
+
+## Installation
+
+`composer require canciolabs/php-functions`
 
 ## Functions
 * Array
