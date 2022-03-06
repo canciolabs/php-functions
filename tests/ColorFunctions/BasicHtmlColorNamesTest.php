@@ -32,7 +32,11 @@ class BasicHtmlColorNamesTest extends CustomTestCase
             'yellow',
         ];
 
-        $this->assertEquals($expected, basic_html_color_names());
+        $actual = basic_html_color_names();
+
+        $this->assertCount(16, $actual);
+
+        $this->assertEquals($expected, $actual);
     }
 
 }
