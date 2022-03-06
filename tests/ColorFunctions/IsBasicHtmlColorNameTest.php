@@ -3,9 +3,9 @@
 namespace CancioLabs\Functions\Tests\ColorFunctions;
 
 use CancioLabs\Functions\Tests\CustomTestCase;
-use function CancioLabs\Functions\ColorFunctions\is_basic_color_name;
+use function CancioLabs\Functions\ColorFunctions\is_basic_html_color_name;
 
-class IsBasicColorNameTest extends CustomTestCase
+class IsBasicHtmlColorNameTest extends CustomTestCase
 {
 
     public function validBasicColorNameDataProvider(): array
@@ -48,7 +48,7 @@ class IsBasicColorNameTest extends CustomTestCase
      */
     public function shouldReturnFalseForOtherStrings(string $color_name): void
     {
-        $this->assertFalse(is_basic_color_name($color_name));
+        $this->assertFalse(is_basic_html_color_name($color_name));
     }
 
     /**
@@ -57,7 +57,7 @@ class IsBasicColorNameTest extends CustomTestCase
      */
     public function shouldReturnTrueForValidColorName(string $color_name): void
     {
-        $this->assertTrue(is_basic_color_name($color_name));
+        $this->assertTrue(is_basic_html_color_name($color_name));
     }
 
 }
