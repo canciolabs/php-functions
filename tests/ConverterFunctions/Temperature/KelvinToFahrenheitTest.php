@@ -8,13 +8,11 @@ use function CancioLabs\Functions\ConverterFunctions\Temperature\kelvin_to_fahre
 class KelvinToFahrenheitTest extends TemperatureTestCase
 {
 
-    public function temperatureDataProvider(): array
+    public function validTemperatureDataProvider(): array
     {
         $numbers = [];
 
         // Min
-        $numbers[] = [-1, -459.67];
-        $numbers[] = [-0.999, -459.67];
         $numbers[] = [0, -459.67];
 
         // Int
@@ -31,7 +29,7 @@ class KelvinToFahrenheitTest extends TemperatureTestCase
 
     /**
      * @test
-     * @dataProvider invalidTemperatureDataProvider
+     * @dataProvider invalidTemperatureDataTypeDataProvider
      */
     public function shouldThrowExceptionWhenTemperatureIsNotNumeric($invalid_temperature): void
     {
@@ -42,9 +40,20 @@ class KelvinToFahrenheitTest extends TemperatureTestCase
 
     /**
      * @test
-     * @dataProvider temperatureDataProvider
+     * @dataProvider invalidKelvinDataProvider
      */
-    public function shouldReturnExpectedKelvin($kelvin, $fahrenheit): void
+    public function shouldThrowExceptionWhenTemperatureIsInvalid($invalid_temperature): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        kelvin_to_fahrenheit($invalid_temperature);
+    }
+
+    /**
+     * @test
+     * @dataProvider validTemperatureDataProvider
+     */
+    public function shouldConvertWhenTemperatureIsValid($kelvin, $fahrenheit): void
     {
         $this->assertSame($fahrenheit, kelvin_to_fahrenheit($kelvin));
     }

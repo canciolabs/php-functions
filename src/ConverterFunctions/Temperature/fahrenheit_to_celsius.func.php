@@ -9,6 +9,9 @@ if (!function_exists('fahrenheit_to_celsius')) {
     {
         Assert::numeric($fahrenheit);
 
+        $fahrenheit = (float) $fahrenheit;
+        Assert::greaterThanEq($fahrenheit, -459.67);
+
         return max(-273.15, ($fahrenheit - 32) / 1.8);
     }
 }

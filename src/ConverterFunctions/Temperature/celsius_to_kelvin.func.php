@@ -9,6 +9,9 @@ if (!function_exists('celsius_to_kelvin')) {
     {
         Assert::numeric($celsius);
 
+        $celsius = (float) $celsius;
+        Assert::greaterThanEq($celsius, -273.15);
+
         return max(0, $celsius + 273.15);
     }
 }

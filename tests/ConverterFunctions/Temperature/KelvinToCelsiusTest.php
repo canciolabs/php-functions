@@ -8,13 +8,11 @@ use function CancioLabs\Functions\ConverterFunctions\Temperature\kelvin_to_celsi
 class KelvinToCelsiusTest extends TemperatureTestCase
 {
 
-    public function temperatureDataProvider(): array
+    public function validTemperatureDataProvider(): array
     {
         $numbers = [];
 
         // Min
-        $numbers[] = [-1, -273.15];
-        $numbers[] = [-0.999, -273.15];
         $numbers[] = [0, -273.15];
 
         // Int
@@ -31,7 +29,7 @@ class KelvinToCelsiusTest extends TemperatureTestCase
 
     /**
      * @test
-     * @dataProvider invalidTemperatureDataProvider
+     * @dataProvider invalidTemperatureDataTypeDataProvider
      */
     public function shouldThrowExceptionWhenTemperatureIsNotNumeric($invalid_temperature): void
     {
@@ -42,9 +40,20 @@ class KelvinToCelsiusTest extends TemperatureTestCase
 
     /**
      * @test
-     * @dataProvider temperatureDataProvider
+     * @dataProvider invalidKelvinDataProvider
      */
-    public function shouldReturnExpectedKelvin($kelvin, $celsius): void
+    public function shouldThrowExceptionWhenTemperatureIsInvalid($invalid_temperature): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        kelvin_to_celsius($invalid_temperature);
+    }
+
+    /**
+     * @test
+     * @dataProvider validTemperatureDataProvider
+     */
+    public function shouldConvertWhenTemperatureIsValid($kelvin, $celsius): void
     {
         $this->assertSame($celsius, kelvin_to_celsius($kelvin));
     }

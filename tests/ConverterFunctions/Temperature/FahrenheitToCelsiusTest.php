@@ -4,17 +4,16 @@ namespace CancioLabs\Functions\Tests\ConverterFunctions\Temperature;
 
 use InvalidArgumentException;
 use function CancioLabs\Functions\ConverterFunctions\Temperature\fahrenheit_to_celsius;
+use function CancioLabs\Functions\ConverterFunctions\Temperature\fahrenheit_to_kelvin;
 
 class FahrenheitToCelsiusTest extends TemperatureTestCase
 {
 
-    public function temperatureDataProvider(): array
+    public function validTemperatureDataProvider(): array
     {
         $numbers = [];
 
         // Min
-        $numbers[] = [-459.68, -273.15];
-        $numbers[] = [-459.671, -273.15];
         $numbers[] = [-459.67, -273.15];
 
         // Int
@@ -31,7 +30,7 @@ class FahrenheitToCelsiusTest extends TemperatureTestCase
 
     /**
      * @test
-     * @dataProvider invalidTemperatureDataProvider
+     * @dataProvider invalidTemperatureDataTypeDataProvider
      */
     public function shouldThrowExceptionWhenTemperatureIsNotNumeric($invalid_temperature): void
     {
@@ -42,9 +41,20 @@ class FahrenheitToCelsiusTest extends TemperatureTestCase
 
     /**
      * @test
-     * @dataProvider temperatureDataProvider
+     * @dataProvider invalidFahrenheitDataProvider
      */
-    public function shouldReturnExpectedKelvin($fahrenheit, $celsius): void
+    public function shouldThrowExceptionWhenTemperatureIsInvalid($invalid_temperature): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        fahrenheit_to_kelvin($invalid_temperature);
+    }
+
+    /**
+     * @test
+     * @dataProvider validTemperatureDataProvider
+     */
+    public function shouldConvertWhenTemperatureIsValid($fahrenheit, $celsius): void
     {
         $this->assertSame($celsius, fahrenheit_to_celsius($fahrenheit));
     }
