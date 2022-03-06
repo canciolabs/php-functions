@@ -11,6 +11,9 @@ Functions that do not deserve a class or component. Not yet. :)
   * is_hex_color
   * is_rgb_color
   * rgb_to_hex
+* Converter
+  * Temperature
+    * celsius_to_kelvin
 * Math
   * lcd (alias for `lowest_common_denominator`)
   * gcd (alias for `greatest_common_divisor`)
