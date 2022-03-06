@@ -46,7 +46,7 @@ class IsBasicColorNameTest extends CustomTestCase
      * @test
      * @dataProvider invalidBasicColorNameDataProvider
      */
-    public function shouldReturnTrueForHexColors(string $color_name): void
+    public function shouldReturnFalseForOtherStrings(string $color_name): void
     {
         $this->assertFalse(is_basic_color_name($color_name));
     }
@@ -55,7 +55,7 @@ class IsBasicColorNameTest extends CustomTestCase
      * @test
      * @dataProvider validBasicColorNameDataProvider
      */
-    public function shouldReturnFalseForOtherStrings(string $color_name): void
+    public function shouldReturnTrueForValidColorName(string $color_name): void
     {
         $this->assertTrue(is_basic_color_name($color_name));
     }
