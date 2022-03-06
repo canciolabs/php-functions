@@ -3,10 +3,14 @@
 ## TODO
 
 * Add missing documentation.
+* Improve error messages.
 * Implement array functions:
   * `natural_explode`
   * `array_diff_recursive`
   * `array_structure`
+* Implement color functions:
+  * `cmyk`
+  * `hsl`
 * Implement converter functions:
   * `angle`
   * `area`
