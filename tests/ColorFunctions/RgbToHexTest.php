@@ -45,7 +45,7 @@ class RgbToHexTest extends CustomTestCase
      * @test
      * @dataProvider validRgbColorDataProvider
      */
-    public function shouldReturnRgbWhenHexColorIsValid(string $rgb_color, string $hex_color): void
+    public function shouldReturnHexWhenRgbColorIsValid(string $rgb_color, string $hex_color): void
     {
         $this->assertSame($hex_color, rgb_to_hex($rgb_color));
     }
