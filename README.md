@@ -7,8 +7,8 @@ Functions that do not deserve a class or component. Not yet. :)
   * array_subsets
   * natural_implode
 * Color
-  * hex_to_rgb
   * hex_to_html_color_name
+  * hex_to_rgb
   * html_color_name_to_rgb
   * html_color_name_to_hex
   * is_basic_html_color_name
@@ -16,6 +16,7 @@ Functions that do not deserve a class or component. Not yet. :)
   * is_html_color_name
   * is_rgb_color
   * rgb_to_hex
+  * rgb_to_html_color_name
 * Converter
   * Temperature
     * celsius_to_fahrenheit
