@@ -1,11 +1,15 @@
 {
-    "name": "canciolabs/functions",
+    "name": "canciolabs/php-functions",
     "description": "Functions that do not deserve a class or component. Not yet.",
     "type": "library",
     "keywords": ["functions", "php", "utilities", "helpers"],
-    "homepage": "https://bitbucket.org/cancio-labs/functions/src/master/",
+    "homepage": "https://github.com/canciolabs/php-functions",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Cancio Labs",
+            "email": "canciolabs@gmail.com"
+        },
         {
             "name": "Nilo Soares",
             "email": "nilosoares@gmail.com"
