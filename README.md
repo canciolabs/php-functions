@@ -7,6 +7,7 @@ Functions that do not deserve a class or component. Not yet. :)
   * array_subsets
   * natural_implode
 * Color
+  * basic_html_color_names
   * hex_to_html_color_name
   * hex_to_rgb
   * html_color_name_to_rgb
