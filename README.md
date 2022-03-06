@@ -13,6 +13,7 @@ Functions that do not deserve a class or component. Not yet. :)
   * rgb_to_hex
 * Converter
   * Temperature
+    * celsius_to_fahrenheit
     * celsius_to_kelvin
 * Math
   * lcd (alias for `lowest_common_denominator`)
