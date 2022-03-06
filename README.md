@@ -18,6 +18,7 @@ Functions that do not deserve a class or component. Not yet. :)
     * fahrenheit_to_celsius
     * fahrenheit_to_kelvin
     * kelvin_to_celsius
+    * kelvin_to_fahrenheit
 * Math
   * lcd (alias for `lowest_common_denominator`)
   * gcd (alias for `greatest_common_divisor`)
