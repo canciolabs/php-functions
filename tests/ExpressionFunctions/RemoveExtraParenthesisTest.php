@@ -1,9 +1,9 @@
 <?php
 
-namespace CancioLabs\Functions\Tests\StringFunctions;
+namespace CancioLabs\Functions\Tests\ExpressionFunctions;
 
 use CancioLabs\Functions\Tests\CustomTestCase;
-use function CancioLabs\Functions\StringFunctions\remove_extra_parenthesis;
+use function CancioLabs\Functions\ExpressionFunctions\remove_extra_parenthesis;
 
 class RemoveExtraParenthesisTest extends CustomTestCase
 {
@@ -13,6 +13,8 @@ class RemoveExtraParenthesisTest extends CustomTestCase
         $expressions = [];
 
         $expressions[] = ['', ''];
+        $expressions[] = ['()', '()'];
+        $expressions[] = ['(())', '()'];
         $expressions[] = ['1', '1'];
         $expressions[] = ['(1)', '(1)'];
         $expressions[] = ['((1))', '(1)'];
@@ -24,9 +26,12 @@ class RemoveExtraParenthesisTest extends CustomTestCase
         $expressions[] = ['3-((2+1))', '3-(2+1)'];
         $expressions[] = ['(3-2)+1', '(3-2)+1'];
         $expressions[] = ['((3-2))+1', '(3-2)+1'];
+        $expressions[] = ['((3-2)+1)', '((3-2)+1)'];
         $expressions[] = ['(1+2)/(3+4)', '(1+2)/(3+4)'];
         $expressions[] = ['((1+2))/((3+4))', '(1+2)/(3+4)'];
         $expressions[] = ['((((1+2)))/((((3+4)))))', '(1+2)/(3+4)'];
+        $expressions[] = ['((1+2)+3)+4', '((1+2)+3)+4'];
+        $expressions[] = ['((1+2)+3)+4', '((1+2)+3)+4'];
 
         return $expressions;
     }
