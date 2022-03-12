@@ -36,6 +36,7 @@ Functions that do not deserve a class or component. Not yet. :)
   * gcd (alias for `greatest_common_divisor`)
   * is_prime
 * String
+  * is_palindrome
   * remove_extra_spaces
   * replace_special_chars
 * Utility
