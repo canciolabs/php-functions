@@ -4,7 +4,7 @@ use Symfony\Component\Finder\Finder;
 
 $finder = (new Finder())
     ->files()
-    ->name('*.func.php')
+    ->name('/\.(const|func)\.php$/')
     ->in(__DIR__);
 
 if (!$finder->hasResults()) {
