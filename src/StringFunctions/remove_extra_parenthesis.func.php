@@ -11,7 +11,7 @@ if (!function_exists('remove_extra_parenthesis')) {
 
         $length = strlen($expression);
 
-        // Find sequence of open parenthesis
+        // Find sequence of "open parenthesis"
         $i = $first = strpos($expression, '(');
         if ($i === false) {
             return $expression;
@@ -20,7 +20,7 @@ if (!function_exists('remove_extra_parenthesis')) {
             $i++;
         }
 
-        // Find sequence of close parenthesis
+        // Find sequence of "close parenthesis"
         $j = $last = strpos(substr($expression, $i + 1), ')') + $i + 1;
         if ($j === false) {
             return $expression;
@@ -35,23 +35,22 @@ if (!function_exists('remove_extra_parenthesis')) {
             return $expression;
         }
 
-
         return trim(
-            // 0 from char before the first "open parenthesis"
+            // from 0 to first char before the first "open parenthesis"
             substr($expression, 0, $first) .
 
             // open parenthesis
             '(' .
 
-            // first char after the last "open parenthesis"
-            // to
-            // first char before the first "close parenthesis"
+            // from the first char after the last "open parenthesis"
+            // to the first char before the first "close parenthesis"
             substr($expression, $i + 1, $j - $i - 1) .
 
             // close parenthesis
             ')' .
 
             // remove extra parenthesis from the first char after the last "close parenthesis"
+            // to the end of the expression
             remove_extra_parenthesis(substr($expression, $last + 1))
         );
     }
