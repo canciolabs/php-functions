@@ -1,6 +1,6 @@
 <?php
 
-namespace CancioLabs\Functions\StringFunctions;
+namespace CancioLabs\Functions\ExpressionFunctions;
 
 if (!function_exists('remove_extra_parenthesis')) {
     function remove_extra_parenthesis(string $expression): string

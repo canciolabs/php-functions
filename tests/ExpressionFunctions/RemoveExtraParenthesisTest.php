@@ -1,9 +1,9 @@
 <?php
 
-namespace CancioLabs\Functions\Tests\StringFunctions;
+namespace CancioLabs\Functions\Tests\ExpressionFunctions;
 
 use CancioLabs\Functions\Tests\CustomTestCase;
-use function CancioLabs\Functions\StringFunctions\remove_extra_parenthesis;
+use function CancioLabs\Functions\ExpressionFunctions\remove_extra_parenthesis;
 
 class RemoveExtraParenthesisTest extends CustomTestCase
 {
