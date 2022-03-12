@@ -39,6 +39,7 @@ Functions that do not deserve a class or component. Not yet. :)
   * is_prime
 * Random
   * random_char
+  * random_password
   * random_string
 * String
   * is_palindrome
