@@ -37,6 +37,7 @@ Functions that do not deserve a class or component. Not yet. :)
   * is_prime
 * String
   * is_palindrome
+  * remove_extra_parenthesis
   * remove_extra_spaces
   * replace_special_chars
 * Utility
