@@ -3,6 +3,15 @@
 namespace CancioLabs\Functions\ExpressionFunctions;
 
 if (!function_exists('remove_extra_parenthesis')) {
+    /**
+     * Removes extra parenthesis from an expression.
+     *
+     * Notice that this function remove only "extra" parenthesis.
+     * It does not evaluate if the parenthesis are unnecessary and can be removed.
+     *
+     * @param string $expression
+     * @return string
+     */
     function remove_extra_parenthesis(string $expression): string
     {
         if ($expression === '') {

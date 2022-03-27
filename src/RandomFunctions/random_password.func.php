@@ -5,6 +5,16 @@ namespace CancioLabs\Functions\RandomFunctions;
 use Webmozart\Assert\Assert;
 
 if (!function_exists('random_password')) {
+    /**
+     * Returns a random password.
+     *
+     * @param int $length
+     * @param bool $include_symbols
+     * @param bool $include_numbers
+     * @param bool $include_lowercase_letters
+     * @param bool $include_uppercase_letters
+     * @return string
+     */
     function random_password(
         int $length = 16,
         bool $include_symbols = false,
