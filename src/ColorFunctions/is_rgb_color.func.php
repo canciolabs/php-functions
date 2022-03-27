@@ -3,6 +3,12 @@
 namespace CancioLabs\Functions\ColorFunctions;
 
 if (!function_exists('is_rgb_color')) {
+    /**
+     * Checks if a color is a valid RGB.
+     *
+     * @param string $color
+     * @return bool
+     */
     function is_rgb_color(string $color): bool
     {
         $component_pattern = sprintf(

@@ -4,7 +4,8 @@ namespace CancioLabs\Functions\ColorFunctions;
 
 if (!function_exists('basic_html_color_names')) {
     /**
-     * Return a list of the basic color names.
+     * Returns a list of the basic color names.
+     *
      * @return string[]
      * @link https://www.w3.org/wiki/CSS/Properties/color/keywords#Basic_Colors
      */

@@ -5,6 +5,14 @@ namespace CancioLabs\Functions\ArrayFunctions;
 use Webmozart\Assert\Assert;
 
 if (!function_exists('natural_implode')) {
+    /**
+     * Returns a string which is the concatenation of the elements of an array.
+     *
+     * @param string[] $arr
+     * @param string $separator
+     * @param string $conjunction
+     * @return string
+     */
     function natural_implode(array $arr, string $separator = ', ', string $conjunction = ' and '): string
     {
         Assert::allString($arr);

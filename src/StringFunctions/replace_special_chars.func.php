@@ -3,6 +3,12 @@
 namespace CancioLabs\Functions\StringFunctions;
 
 if (!function_exists('replace_special_chars')) {
+    /**
+     * Replaces special characters of a string with regular characters.
+     *
+     * @param string $str
+     * @return string
+     */
     function replace_special_chars(string $str): string
     {
         $patterns = [
