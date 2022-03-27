@@ -4,9 +4,7 @@ namespace CancioLabs\Functions\MathFunctions;
 
 if (!function_exists('is_prime')) {
     /**
-     * Checks if the given number is a prime number.
-     *
-     * This function should run fine for integers less than 10.000.
+     * Checks if a number is a prime number.
      *
      * @param int $n
      * @return bool
