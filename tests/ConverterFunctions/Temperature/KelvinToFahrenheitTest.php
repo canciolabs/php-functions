@@ -22,7 +22,8 @@ class KelvinToFahrenheitTest extends TemperatureTestCase
         $numbers[] = [373.15, 212.0];
 
         // Numeric string
-        $numbers[] = ['200.26', -99.202];
+        $numbers[] = ['200.26', -99.20, 2];
+        $numbers[] = ['200.26', -99.202, 3];
 
         return $numbers;
     }
@@ -53,9 +54,9 @@ class KelvinToFahrenheitTest extends TemperatureTestCase
      * @test
      * @dataProvider validTemperatureDataProvider
      */
-    public function shouldConvertWhenTemperatureIsValid($kelvin, $fahrenheit): void
+    public function shouldConvertWhenTemperatureIsValid($kelvin, $fahrenheit, int $precision = 2): void
     {
-        $this->assertSame($fahrenheit, kelvin_to_fahrenheit($kelvin));
+        $this->assertSame($fahrenheit, kelvin_to_fahrenheit($kelvin, $precision));
     }
 
 }

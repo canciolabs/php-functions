@@ -9,15 +9,16 @@ if (!function_exists('celsius_to_fahrenheit')) {
      * Converts Celsius into Fahrenheit.
      *
      * @param string|int|float $celsius
+     * @param int $precision
      * @return float
      */
-    function celsius_to_fahrenheit($celsius): float
+    function celsius_to_fahrenheit($celsius, int $precision = 2): float
     {
         Assert::numeric($celsius);
 
         $celsius = (float) $celsius;
         Assert::greaterThanEq($celsius, -273.15);
 
-        return max(-459.67, ($celsius * 1.8) + 32);
+        return round(max(-459.67, ($celsius * 1.8) + 32), $precision);
     }
 }

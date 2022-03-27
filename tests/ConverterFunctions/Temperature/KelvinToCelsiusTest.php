@@ -22,7 +22,8 @@ class KelvinToCelsiusTest extends TemperatureTestCase
         $numbers[] = [373.15, 100.0];
 
         // Numeric string
-        $numbers[] = ['200.26', -72.88999999999999];
+        $numbers[] = ['200.26', -72.89];
+        $numbers[] = ['200.26', -72.89, 3];
 
         return $numbers;
     }
@@ -53,9 +54,9 @@ class KelvinToCelsiusTest extends TemperatureTestCase
      * @test
      * @dataProvider validTemperatureDataProvider
      */
-    public function shouldConvertWhenTemperatureIsValid($kelvin, $celsius): void
+    public function shouldConvertWhenTemperatureIsValid($kelvin, $celsius, int $precision = 2): void
     {
-        $this->assertSame($celsius, kelvin_to_celsius($kelvin));
+        $this->assertSame($celsius, kelvin_to_celsius($kelvin, $precision));
     }
 
 }

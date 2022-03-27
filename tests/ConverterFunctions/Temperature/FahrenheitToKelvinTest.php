@@ -17,7 +17,8 @@ class FahrenheitToKelvinTest extends TemperatureTestCase
 
         // Int
         $numbers[] = [32, 273.15];
-        $numbers[] = [70, 294.2611111111];
+        $numbers[] = [70, 294.26];
+        $numbers[] = [70, 294.261, 3];
         $numbers[] = [98.6, 310.15];
         $numbers[] = [212, 373.15];
 
@@ -53,9 +54,9 @@ class FahrenheitToKelvinTest extends TemperatureTestCase
      * @test
      * @dataProvider validTemperatureDataProvider
      */
-    public function shouldConvertWhenTemperatureIsValid($fahrenheit, $kelvin): void
+    public function shouldConvertWhenTemperatureIsValid($fahrenheit, $kelvin, int $precision = 2): void
     {
-        $this->assertSame($kelvin, fahrenheit_to_kelvin($fahrenheit));
+        $this->assertSame($kelvin, fahrenheit_to_kelvin($fahrenheit, $precision));
     }
 
 }
