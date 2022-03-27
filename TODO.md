@@ -2,7 +2,6 @@
 
 ## TODO
 
-* Add missing documentation.
 * Improve error messages.
 * Implement array functions:
   * `natural_explode`
