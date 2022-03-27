@@ -10,21 +10,6 @@ abstract class TemperatureTestCase extends CustomTestCase
 
     abstract public function validTemperatureDataProvider(): array;
 
-    public function invalidTemperatureDataTypeDataProvider(): array
-    {
-        $numbers = [];
-
-        $numbers[] = [null];
-        $numbers[] = [true];
-        $numbers[] = [false];
-        $numbers[] = [''];
-        $numbers[] = ['foo'];
-        $numbers[] = [[1]];
-        $numbers[] = [new DateTime('now')];
-
-        return $numbers;
-    }
-
     public function invalidCelsiusDataProvider(): array
     {
         $numbers = [];

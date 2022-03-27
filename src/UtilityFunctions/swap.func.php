@@ -10,7 +10,7 @@ if (!function_exists('swap')) {
      * @param mixed $b
      * @return void
      */
-    function swap(&$a, &$b): void
+    function swap(mixed &$a, mixed &$b): void
     {
         $tmp = $a;
         $a = $b;

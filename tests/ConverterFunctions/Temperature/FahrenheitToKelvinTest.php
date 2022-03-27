@@ -30,17 +30,6 @@ class FahrenheitToKelvinTest extends TemperatureTestCase
 
     /**
      * @test
-     * @dataProvider invalidTemperatureDataTypeDataProvider
-     */
-    public function shouldThrowExceptionWhenTemperatureIsNotNumeric($invalid_temperature): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        fahrenheit_to_kelvin($invalid_temperature);
-    }
-
-    /**
-     * @test
      * @dataProvider invalidFahrenheitDataProvider
      */
     public function shouldThrowExceptionWhenTemperatureIsInvalid($invalid_temperature): void
