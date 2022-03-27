@@ -12,7 +12,7 @@ if (!function_exists('kelvin_to_celsius')) {
      * @param int $precision
      * @return float
      */
-    function kelvin_to_celsius($kelvin, int $precision = 2): float
+    function kelvin_to_celsius(string|int|float $kelvin, int $precision = 2): float
     {
         Assert::numeric($kelvin);
 

@@ -30,17 +30,6 @@ class CelsiusToKelvinTest extends TemperatureTestCase
 
     /**
      * @test
-     * @dataProvider invalidTemperatureDataTypeDataProvider
-     */
-    public function shouldThrowExceptionWhenTemperatureIsNotNumeric($invalid_temperature): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        celsius_to_kelvin($invalid_temperature);
-    }
-
-    /**
-     * @test
      * @dataProvider invalidCelsiusDataProvider
      */
     public function shouldThrowExceptionWhenTemperatureIsInvalid($invalid_temperature): void

@@ -12,7 +12,7 @@ if (!function_exists('fahrenheit_to_celsius')) {
      * @param int $precision
      * @return float
      */
-    function fahrenheit_to_celsius($fahrenheit, int $precision = 2): float
+    function fahrenheit_to_celsius(string|int|float $fahrenheit, int $precision = 2): float
     {
         Assert::numeric($fahrenheit);
 
