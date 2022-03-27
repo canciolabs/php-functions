@@ -22,7 +22,8 @@ class CelsiusToFahrenheitTest extends TemperatureTestCase
         $numbers[] = [100, 212.0];
 
         // Numeric string
-        $numbers[] = ['72.89', 163.202];
+        $numbers[] = ['72.89', 163.20];
+        $numbers[] = ['72.89', 163.202, 3];
 
         return $numbers;
     }
@@ -53,9 +54,9 @@ class CelsiusToFahrenheitTest extends TemperatureTestCase
      * @test
      * @dataProvider validTemperatureDataProvider
      */
-    public function shouldConvertWhenTemperatureIsValid($celsius, $fahrenheit): void
+    public function shouldConvertWhenTemperatureIsValid($celsius, $fahrenheit, int $precision = 2): void
     {
-        $this->assertSame($fahrenheit, celsius_to_fahrenheit($celsius));
+        $this->assertSame($fahrenheit, celsius_to_fahrenheit($celsius, $precision));
     }
 
 }

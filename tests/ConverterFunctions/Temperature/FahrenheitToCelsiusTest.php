@@ -18,7 +18,8 @@ class FahrenheitToCelsiusTest extends TemperatureTestCase
 
         // Int
         $numbers[] = [32, 0.0];
-        $numbers[] = [70, 21.11111111111111];
+        $numbers[] = [70, 21.11];
+        $numbers[] = [70, 21.111, 3];
         $numbers[] = [98.6, 37.0];
         $numbers[] = [212, 100.0];
 
@@ -54,9 +55,9 @@ class FahrenheitToCelsiusTest extends TemperatureTestCase
      * @test
      * @dataProvider validTemperatureDataProvider
      */
-    public function shouldConvertWhenTemperatureIsValid($fahrenheit, $celsius): void
+    public function shouldConvertWhenTemperatureIsValid($fahrenheit, $celsius, int $precision = 2): void
     {
-        $this->assertSame($celsius, fahrenheit_to_celsius($fahrenheit));
+        $this->assertSame($celsius, fahrenheit_to_celsius($fahrenheit, $precision));
     }
 
 }
