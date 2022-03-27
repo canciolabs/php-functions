@@ -5,6 +5,12 @@ namespace CancioLabs\Functions\ConverterFunctions\Temperature;
 use Webmozart\Assert\Assert;
 
 if (!function_exists('fahrenheit_to_kelvin')) {
+    /**
+     * Converts Fahrenheit into Kelvin.
+     *
+     * @param string|int|float $fahrenheit
+     * @return float
+     */
     function fahrenheit_to_kelvin($fahrenheit): float
     {
         Assert::numeric($fahrenheit);

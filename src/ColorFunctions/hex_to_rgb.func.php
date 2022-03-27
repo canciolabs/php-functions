@@ -5,6 +5,12 @@ namespace CancioLabs\Functions\ColorFunctions;
 use InvalidArgumentException;
 
 if (!function_exists('hex_to_rgb')) {
+    /**
+     * Converts a hex decimal color into RGB.
+     *
+     * @param string $hex_color
+     * @return string
+     */
     function hex_to_rgb(string $hex_color): string
     {
         if (!is_hex_color($hex_color)) {

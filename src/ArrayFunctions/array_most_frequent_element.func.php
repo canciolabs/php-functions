@@ -7,6 +7,10 @@ use Webmozart\Assert\Assert;
 
 if (!function_exists('array_most_frequent_element')) {
     /**
+     * Returns the most frequent element of an array.
+     * If there are more than one element with the same number of occurrences,
+     * it will return an array with those elements.
+     *
      * @param array $arr Array of strings, integers or both.
      * @return array|int|string|void|null
      */

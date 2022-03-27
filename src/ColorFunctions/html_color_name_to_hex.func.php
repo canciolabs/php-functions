@@ -5,6 +5,12 @@ namespace CancioLabs\Functions\ColorFunctions;
 use Webmozart\Assert\Assert;
 
 if (!function_exists('html_color_name_to_hex')) {
+    /**
+     * Converts an HTML color name into a hex decimal color.
+     *
+     * @param string $color_name
+     * @return string
+     */
     function html_color_name_to_hex(string $color_name): string
     {
         $map = [
