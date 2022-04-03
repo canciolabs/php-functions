@@ -31,6 +31,13 @@ Functions that do not deserve a class or component. Not yet. :)
     * fahrenheit_to_kelvin
     * kelvin_to_celsius
     * kelvin_to_fahrenheit
+  * Time
+    * hour_to_second
+    * minute_to_second
+    * month_to_second
+    * quarter_to_second
+    * week_to_second
+    * year_to_second
 * Expression
   * remove_extra_parenthesis
 * Math
