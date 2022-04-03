@@ -22,7 +22,6 @@
   * `power`
   * `pressure`
   * `speed`
-  * `time`
   * `volume`
 * Implement math functions:
   * `factorial`
