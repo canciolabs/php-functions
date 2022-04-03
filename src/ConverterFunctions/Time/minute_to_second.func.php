@@ -11,7 +11,7 @@ if (!function_exists('minute_to_second')) {
      * @param int|float $minutes
      * @return int
      */
-    function minute_to_second($minutes): int
+    function minute_to_second($minutes)
     {
         Assert::numeric($minutes);
 

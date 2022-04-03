@@ -6,7 +6,7 @@ use Webmozart\Assert\Assert;
 
 if (!function_exists('quarter_to_second')) {
     /**
-     * Converts Quarter into Seconds.
+     * Converts Quarter into Seconds. (1 quarter = year/4)
      *
      * @param int|float $quarters
      * @return int
@@ -15,6 +15,6 @@ if (!function_exists('quarter_to_second')) {
     {
         Assert::numeric($quarters);
 
-        return $quarters * 10368000;
+        return $quarters * 7884000;
     }
 }

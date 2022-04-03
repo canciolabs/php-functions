@@ -6,7 +6,7 @@ use Webmozart\Assert\Assert;
 
 if (!function_exists('month_to_second')) {
     /**
-     * Converts Months into Seconds.
+     * Converts Months into Seconds. (1 month = 30 days)
      *
      * @param int|float $months
      * @return int
@@ -15,6 +15,6 @@ if (!function_exists('month_to_second')) {
     {
         Assert::numeric($months);
 
-        return $months * 2592000;
+        return $months * 2592000; // 30 days
     }
 }

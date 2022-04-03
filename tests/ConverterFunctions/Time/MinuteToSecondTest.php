@@ -12,11 +12,11 @@ class MinuteToSecondTest extends TimeTestCase
     {
         $numbers = [];
 
-        $numbers[] = [-1.5, -90];
+        $numbers[] = [-1.5, -90.0];
         $numbers[] = [-1, -60];
         $numbers[] = [0, 0];
         $numbers[] = [1, 60];
-        $numbers[] = [1.5, 90];
+        $numbers[] = [1.5, 90.0];
         $numbers[] = [60, 3600];
 
         return $numbers;
@@ -37,9 +37,9 @@ class MinuteToSecondTest extends TimeTestCase
      * @test
      * @dataProvider validTimeDataProvider
      */
-    public function shouldConvertWhenTimeIsValid($minute, $seconds): void
+    public function shouldConvertWhenTimeIsValid($minutes, $seconds): void
     {
-        $this->assertSame($seconds, minute_to_second($minute));
+        $this->assertSame($seconds, minute_to_second($minutes));
     }
 
 }

@@ -6,7 +6,7 @@ use Webmozart\Assert\Assert;
 
 if (!function_exists('week_to_second')) {
     /**
-     * Converts Weeks into Seconds.
+     * Converts Weeks into Seconds. (1 week = 7 days)
      *
      * @param int|float $weeks
      * @return int
@@ -15,6 +15,6 @@ if (!function_exists('week_to_second')) {
     {
         Assert::numeric($weeks);
 
-        return $weeks * 604800;
+        return $weeks * 604800; // 7 days
     }
 }

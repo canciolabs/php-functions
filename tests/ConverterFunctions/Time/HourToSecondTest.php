@@ -12,11 +12,11 @@ class HourToSecondTest extends TimeTestCase
     {
         $numbers = [];
 
-        $numbers[] = [-1.5, -5400];
+        $numbers[] = [-1.5, -5400.0];
         $numbers[] = [-1, -3600];
         $numbers[] = [0, 0];
         $numbers[] = [1, 3600];
-        $numbers[] = [1.5, 5400];
+        $numbers[] = [1.5, 5400.0];
         $numbers[] = [24, 86400];
 
         return $numbers;

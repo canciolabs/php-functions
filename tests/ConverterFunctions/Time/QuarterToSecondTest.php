@@ -12,12 +12,12 @@ class QuarterToSecondTest extends TimeTestCase
     {
         $numbers = [];
 
-        $numbers[] = [-1.5, -15552000.0];
-        $numbers[] = [-1, -10368000];
+        $numbers[] = [-1.5, -11826000.0];
+        $numbers[] = [-1, -7884000];
         $numbers[] = [0, 0];
-        $numbers[] = [1, 10368000];
-        $numbers[] = [1.5, 15552000.0];
-        $numbers[] = [4, 41472000];
+        $numbers[] = [1, 7884000];
+        $numbers[] = [1.5, 11826000.0];
+        $numbers[] = [4, 31536000];
 
         return $numbers;
     }
@@ -37,9 +37,9 @@ class QuarterToSecondTest extends TimeTestCase
      * @test
      * @dataProvider validTimeDataProvider
      */
-    public function shouldConvertWhenTimeIsValid($weeks, $seconds): void
+    public function shouldConvertWhenTimeIsValid($quarters, $seconds): void
     {
-        $this->assertSame($seconds, quarter_to_second($weeks));
+        $this->assertSame($seconds, quarter_to_second($quarters));
     }
 
 }
