@@ -14,13 +14,10 @@ abstract class TimeTestCase extends CustomTestCase
     {
         $numbers = [];
 
-        $numbers[] = [null];
-        $numbers[] = [true];
-        $numbers[] = [false];
         $numbers[] = [''];
         $numbers[] = ['foo'];
-        $numbers[] = [[1]];
-        $numbers[] = [new DateTime('now')];
+        $numbers[] = ['foo123'];
+        $numbers[] = ['123foo'];
 
         return $numbers;
     }

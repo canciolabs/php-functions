@@ -8,13 +8,13 @@ if (!function_exists('year_to_second')) {
     /**
      * Converts Years into Seconds. (1 year = 365 days)
      *
-     * @param int|float $years
-     * @return int
+     * @param string|int|float  $years
+     * @return int|float
      */
-    function year_to_second($years)
+    function year_to_second(string|int|float $years): int|float
     {
         Assert::numeric($years);
 
-        return $years * 31536000; // 365 days
+        return $years * 31536000;
     }
 }

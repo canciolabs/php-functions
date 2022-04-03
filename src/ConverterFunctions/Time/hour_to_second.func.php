@@ -8,10 +8,10 @@ if (!function_exists('hour_to_second')) {
     /**
      * Converts Hours into Seconds.
      *
-     * @param int|float $hours
-     * @return int
+     * @param string|int|float $hours
+     * @return int|float
      */
-    function hour_to_second($hours)
+    function hour_to_second(string|int|float $hours): int|float
     {
         Assert::numeric($hours);
 

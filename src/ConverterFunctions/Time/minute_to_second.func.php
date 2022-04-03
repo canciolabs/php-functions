@@ -8,10 +8,10 @@ if (!function_exists('minute_to_second')) {
     /**
      * Converts Minutes into Seconds.
      *
-     * @param int|float $minutes
-     * @return int
+     * @param string|int|float  $minutes
+     * @return int|float
      */
-    function minute_to_second($minutes)
+    function minute_to_second(string|int|float $minutes): int|float
     {
         Assert::numeric($minutes);
 

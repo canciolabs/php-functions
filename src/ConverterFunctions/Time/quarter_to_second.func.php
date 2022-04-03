@@ -8,10 +8,10 @@ if (!function_exists('quarter_to_second')) {
     /**
      * Converts Quarter into Seconds. (1 quarter = year/4)
      *
-     * @param int|float $quarters
-     * @return int
+     * @param string|int|float  $quarters
+     * @return int|float
      */
-    function quarter_to_second($quarters)
+    function quarter_to_second(string|int|float $quarters): int|float
     {
         Assert::numeric($quarters);
 

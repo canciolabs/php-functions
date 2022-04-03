@@ -8,13 +8,13 @@ if (!function_exists('month_to_second')) {
     /**
      * Converts Months into Seconds. (1 month = 30 days)
      *
-     * @param int|float $months
-     * @return int
+     * @param string|int|float  $months
+     * @return int|float
      */
-    function month_to_second($months)
+    function month_to_second(string|int|float $months): int|float
     {
         Assert::numeric($months);
 
-        return $months * 2592000; // 30 days
+        return $months * 2592000;
     }
 }
