@@ -50,7 +50,7 @@ class MostSignificantBitExponentTest extends CustomTestCase
      * @test
      * @dataProvider negativeIntegerDataProvider
      */
-    public function shouldReturnFalseForNegativeNumbers(int $n): void
+    public function shouldThrowExceptionWhenNumberIsNegative(int $n): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -61,7 +61,7 @@ class MostSignificantBitExponentTest extends CustomTestCase
      * @test
      * @dataProvider nonNegativeIntegerDataProvider
      */
-    public function shouldReturnTrueForPrimeNumbers(int $n, int $exponent): void
+    public function shouldReturnTheExponentWhenNumberIsNonNegative(int $n, int $exponent): void
     {
         $this->assertSame($exponent, most_significant_bit_exponent($n));
     }
