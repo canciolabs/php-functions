@@ -46,6 +46,7 @@ Functions that do not deserve a class or component. Not yet. :)
   * lcd (alias for `lowest_common_denominator`)
   * gcd (alias for `greatest_common_divisor`)
   * is_prime
+  * most_significant_bit
   * most_significant_bit_exponent
 * Random
   * random_char
